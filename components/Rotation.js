@@ -34,39 +34,39 @@ AFRAME.registerComponent("scuba",{
         window.addEventListener("keydown",e=>{
             this.data.speed_of_rotation=this.el.getAttribute("rotation")
             this.data.speed_of_ascend=this.el.getAttribute("position")
-            var scuba=this.data.speed_of_rotation
-            var scuba=this.data.speed_of_ascend
+            var scuba_rotation=this.data.speed_of_rotation
+            var scuba_position=this.data.speed_of_ascend
 
             if(e.key==="ArrowRight"){
-                if(scuba.x<""){
-                    scuba.x+=0.5
-                    this.el.setAttribute("rotation",scuba)
+                if(scuba_rotation.x<""){
+                    scuba_rotation.x+=0.5
+                    this.el.setAttribute("rotation",scuba_rotation)
                 }
             }
             if(e.key==="ArrowLeft"){
-                if(scuba.x>""){
-                    scuba.x-=0.5
-                    this.el.setAttribute("rotation",scuba)
+                if(scuba_rotation.x>""){
+                    scuba_rotation.x-=0.5
+                    this.el.setAttribute("rotation",scuba_rotation)
                 }
             }
             if(e.key==="ArrowUp"){
-                if(scuba.z<""){
-                    scuba.z+=0.5
-                    this.el.setAttribute("rotation",scuba)
+                if(scuba_rotation.z<""){
+                    scuba_rotation.z+=0.5
+                    this.el.setAttribute("rotation",scuba_rotation)
                 }
-                if(scuba.y<""){
-                    scuba.y+=0.01
-                    this.el.setAttribute("position",{x:scuba,x,y:scuba.y,z:scuba.z})
+                if(scuba_position.y<""){
+                    scuba_position.y+=0.01
+                    this.el.setAttribute("position",{x:scuba_position.x,y:scuba_position.y,z:scuba_position.z})
                 }
             }
             if(e.key==="ArrowDown"){
-                if(scuba.z>-10){
-                    scuba.z-=0.5
-                    this.el.setAttribute("rotation",scuba)
+                if(scuba_rotation.z>-10){
+                    scuba_rotation.z-=0.5
+                    this.el.setAttribute("rotation",scuba_rotation)
                 }
-                if(scuba.y>-2){
-                    scuba.y-=0.01
-                    this.el.setAttribute("position",scuba)
+                if(scuba_position.y>-2){
+                    scuba_position.y-=0.01
+                    this.el.setAttribute("position",scuba_position)
                 }
             }
         })
